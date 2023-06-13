@@ -9,6 +9,9 @@ ARG GID
 
 COPY ./mcuxpressoide-${IDE_VERSION}.x86_64.deb.bin /tmp
 
+# CentOS 8 is at EOL, fix the repos URLs
+RUN sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-*
+RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-*
 
 RUN set -e; \
   dnf update -y; \
