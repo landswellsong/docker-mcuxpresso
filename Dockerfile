@@ -31,7 +31,7 @@ RUN set -e; \
   webkit2gtk3 \
   wget \
   which; \
-  wget http://rpmfind.net/linux/fedora/linux/releases/33/Everything/x86_64/os/Packages/d/dfu-util-0.9-10.fc33.x86_64.rpm -O /tmp/dfu.rpm; \
+  wget https://rpmfind.net/linux/fedora/linux/releases/38/Everything/x86_64/os/Packages/d/dfu-util-0.11-4.fc38.x86_64.rpm -O /tmp/dfu.rpm; \
   dnf install -y /tmp/dfu.rpm; \
   rm -f /tmp/dfcu.rpm; \
   useradd -ms /bin/bash -u ${UID} -g ${GID} ${USERNAME}; \
